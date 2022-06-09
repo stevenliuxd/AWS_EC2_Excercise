@@ -2,8 +2,7 @@
 
 This cmd-line application has two features that displays ec2 instance information to the user.
 
-
-
+#
 # How to use
 ## Backend Requirements
 
@@ -15,8 +14,14 @@ This cmd-line application has two features that displays ec2 instance informatio
 python3 -m venv venv
 ```
 
+* Activate virtual env:
+```bash
+venv/Scripts/activate (May need Admin Powershell: Set-ExecutionPolicy RemoteSigned)
+```
+
 * Install requirements into virtual env:
 ```bash
 pip install -r requirements.txt
 ```
+
 
