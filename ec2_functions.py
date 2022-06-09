@@ -1,13 +1,16 @@
 from multiprocessing.sharedctypes import Value
 import boto3
-import json
+import botocore
 
 def instance_report():
 
     # Pull aws instances
-    aws = boto3.client('ec2') 
-    reservations_ec2 = aws.describe_instances()
-    instances_ec2 = reservations_ec2['Reservations']
+    try:
+        aws = boto3.client('ec2') 
+        reservations_ec2 = aws.describe_instances()
+        instances_ec2 = reservations_ec2['Reservations']
+    except botocore.exceptions:
+        print("\nPlease configure the Region/Key/Secret using 'aws configure' on the cli before running the application.")
 
     # Append to readable dict
     instances_filtered = []

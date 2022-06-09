@@ -14,5 +14,7 @@ class TestInstanceReport(unittest.TestCase):
         
         nowarn()
         response = instance_report()
+        self.assertIsNotNone(response)
         self.assertEqual(response, first_sample_resp)
+        
         
