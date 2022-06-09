@@ -2,11 +2,12 @@
 
 This cmd-line application has two features that displays ec2 instance information to the user.
 
-## Backend Requirements
 
-* [Python 3](https://www.python.org/downloads/)
 
 # How to use
+## Backend Requirements
+
+* [Python 3](https://www.python.org/downloads/) on your host machine
 ## Setup Virtual Environment
 
 * Create virtual env:
