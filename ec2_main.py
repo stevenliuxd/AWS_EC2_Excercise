@@ -1,6 +1,6 @@
 from ec2_functions import instance_report
 
-print("Welcome to Steven's AWS excercise!")
+print("\nWelcome to Steven's AWS excercise!")
 
 while True:
 
@@ -9,8 +9,7 @@ while True:
     selection = input()
 
     if selection == '1':
-        result = instance_report()
-        print(f'\nResult:\n{result}')
+        instance_report()
     elif selection == '2':
         pass
     elif selection == '3':
@@ -18,4 +17,6 @@ while True:
     else:
         print('\nWarning: Please select between options 1 to 3.')
         pass
+
+
 

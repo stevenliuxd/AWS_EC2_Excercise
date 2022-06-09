@@ -1,14 +1,16 @@
+from multiprocessing.sharedctypes import Value
 import boto3
 import json
 
 def instance_report():
+
     # Pull aws instances
     aws = boto3.client('ec2') 
     reservations_ec2 = aws.describe_instances()
     instances_ec2 = reservations_ec2['Reservations']
 
     # Append to readable dict
-    instances_filtered = {'instances': []}
+    instances_filtered = []
 
     # Iterate through all instances
     for instance in instances_ec2:
@@ -20,14 +22,26 @@ def instance_report():
         instance_type = sub_group['InstanceType']
         security_groups = sub_group['SecurityGroups']
 
-        # Extract all security group IDs 
+        # Extract all security group IDs (in the example, there is only one per instance)
         security_group_list = []
         for security_group in security_groups:
             security_group_list.append(security_group['GroupId']) 
         
+        # Convert security groups to horizontal string display (incase there is more than one, seperate with space)
+        security_group_str = ''
+        for security_group in security_group_list:
+            security_group_str = security_group_str + security_group + '  '
+        
         # Append current instance
-        instances_filtered['instances'].append({'Instance ID': instance_id, 'Name': name, 'Instance Type': instance_type, 'Security Group IDs': security_group_list})
+        instances_filtered.append({'Instance ID': instance_id, 'Name': name, 'Instance Type': instance_type, 'Security Group IDs': security_group_str})
     
-    # Convert to JSON and return response
-    response = json.dumps(instances_filtered, indent=4)
-    return response
+    # Print results in a table to the user
+    str_format = "{:<22} {:<14} {:<16} {:<20}"
+    print("\n----------------------------------------------------------------------------------")
+    print(str_format.format('Instance ID', 'Name', 'Instance Type', 'Security Group IDs'))
+    for instance in instances_filtered:
+        print(str_format.format(instance['Instance ID'], instance['Name'], instance['Instance Type'], instance['Security Group IDs']))
+    print("----------------------------------------------------------------------------------")
+
+    # Return dict (for testing)
+    return instances_filtered
