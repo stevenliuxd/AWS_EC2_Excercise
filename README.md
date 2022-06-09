@@ -1,4 +1,4 @@
-# Project: ec2_excercise
+# AWS EC2 Excercise
 
 This cmd-line application has two features that displays ec2 instance information to the user.
 
