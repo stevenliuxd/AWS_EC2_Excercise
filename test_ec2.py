@@ -1,6 +1,10 @@
 import unittest
 import json
+import warnings
 from ec2_functions import instance_report
+
+def nowarn():
+    warnings.filterwarnings(action="ignore", category=ResourceWarning) # Ignore resource warning for SSL. OPTIONAL
 
 first_resp = {
     "instances": [
@@ -26,5 +30,9 @@ first_resp = {
 class TestInstanceReport(unittest.TestCase):
 
     def test_instance_report(self):
+        
+        nowarn()
         func_result = json.loads(instance_report()) # Convert to dict
+        
         self.assertEqual(func_result, first_resp)
+        
