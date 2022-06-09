@@ -1,8 +1,7 @@
 import unittest
-import json
 import warnings
 from ec2_functions import instance_report
-from sample_responses import first_sample_resp
+from test_params.sample_responses import first_sample_resp
 
 
 def nowarn():
