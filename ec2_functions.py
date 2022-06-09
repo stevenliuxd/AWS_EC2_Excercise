@@ -9,8 +9,10 @@ def instance_report():
         aws = boto3.client('ec2') 
         reservations_ec2 = aws.describe_instances()
         instances_ec2 = reservations_ec2['Reservations']
-    except botocore.exceptions:
-        print("\nPlease configure the Region/Key/Secret using 'aws configure' on the cli before running the application.")
+    except Exception as e:
+        print("\nError retrieving aws data. Please check your connection and/or configure the settings on the cli via 'aws configure'.")
+        print(f'The error was: {e}\n')
+        exit(1)
 
     # Append to readable dict
     instances_filtered = []
