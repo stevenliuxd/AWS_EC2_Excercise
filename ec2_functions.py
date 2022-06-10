@@ -55,4 +55,5 @@ def instance_report():
          exit(1)
 
     
-    
+def ingress_rules(security_group):
+    pass

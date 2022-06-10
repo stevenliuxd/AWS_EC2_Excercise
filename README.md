@@ -3,7 +3,7 @@
 This cmd-line application has two features that displays ec2 instance information to the user.
 
 # How to use
-## Backend Requirements
+## Requirements
 
 * [Python 3](https://www.python.org/downloads/) installed on your host machine
 * Clone/download this repo, open the folder with VSCode (or any other IDE). 

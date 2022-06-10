@@ -1,4 +1,4 @@
-from ec2_functions import instance_report
+from ec2_functions import instance_report, ingress_rules
 
 print("\nWelcome to Steven's AWS excercise!")
 
@@ -11,7 +11,9 @@ while True:
     if selection == '1':
         instance_report()
     elif selection == '2':
-        pass
+        print('\nEnter the security group ID: ')
+        security_group = input()
+        ingress_rules(security_group)
     elif selection == '3':
         exit(1)
     else:
