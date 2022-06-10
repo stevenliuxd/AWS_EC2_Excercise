@@ -39,7 +39,7 @@ aws configure
 ```
 * Paste in your AWS Access Key, Secret, and Region. Output format can be left as "None"
 
-## Run the Program
+## Run the Application
 
 ```bash
 python ec2_main.py
