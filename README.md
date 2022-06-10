@@ -5,11 +5,13 @@ This cmd-line application has two features that displays ec2 instance informatio
 # How to use
 ## Backend Requirements
 
-* [Python 3](https://www.python.org/downloads/) on your host machine
-* Clone/download this repo locally, then open the folder with VSCode (or any other IDE of your choice). 
-* Alternatively, you can run the application using Powershell (windows) or bash (in the Linux distro of your choice).
+* [Python 3](https://www.python.org/downloads/) installed on your host machine
+* Clone/download this repo, open the folder with VSCode (or any other IDE). 
+* Alternatively, you can run the application using Windows Powershell or bash (Linux).
 
 ## Setup Virtual Environment
+
+Using your terminal, cd to the application directory.
 
 * Create virtual env:
 ```bash
