@@ -6,7 +6,8 @@ This cmd-line application has two features that displays ec2 instance informatio
 ## Backend Requirements
 
 * [Python 3](https://www.python.org/downloads/) on your host machine
-* Clone this repo locally, then open the folder with VSCode or any other IDE of your choice
+* Clone/download this repo locally, then open the folder with VSCode (or any other IDE of your choice). 
+* Alternatively, you can run the application using Powershell (windows) or bash (in the Linux distro of your choice).
 
 ## Setup Virtual Environment
 
