@@ -11,7 +11,7 @@ This cmd-line application has two features that displays ec2 instance informatio
 
 ## Setup Virtual Environment
 
-* Using your terminal, cd to the application directory.
+* Using your terminal, cd to the application directory
 
 * Create virtual env:
 ```bash
@@ -34,5 +34,16 @@ pip install -r requirements.txt
 ```bash
 aws configure
 ```
-* Paste in your AWS Access Key, Secret, and Region. Output format can be left as "None".
+* Paste in your AWS Access Key, Secret, and Region. Output format can be left as "None"
+
+## Run the program
+
+```bash
+python ec2_main.py
+```
+
+## Run unit tests
+```bash
+python -m unittest test_ec2.py
+```
 
