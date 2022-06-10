@@ -1,4 +1,5 @@
 import boto3
+import json
 
 
 def instance_report():
@@ -55,5 +56,26 @@ def instance_report():
          exit(1)
 
     
-def ingress_rules(security_group):
-    pass
+def ingress_rules(user_group):
+
+    # Pull security group description
+    aws = boto3.client('ec2') 
+    describe_output = aws.describe_security_groups()
+    security_group_list = describe_output["SecurityGroups"]
+
+    # Iterate through all security groups to find the specified one
+    desired_security_group = {}
+    for security_group in security_group_list:
+        if security_group["GroupId"] == user_group:
+            desired_security_group = security_group
+            print(f'\nFound security group {security_group["GroupId"]}!\n')
+    
+    # Check if security group has been found
+    if desired_security_group == {}:
+        print(f'\nUnable to find security group {user_group}.')
+        return {}
+
+    # Display the ingress rules for that security group showing the CIDR and port
+            
+    jsono = json.dumps(desired_security_group, indent=4)
+    print(f'The output is: {jsono}')
