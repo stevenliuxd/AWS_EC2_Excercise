@@ -25,4 +25,11 @@ venv/Scripts/activate (May need Admin Powershell: Set-ExecutionPolicy RemoteSign
 pip install -r requirements.txt
 ```
 
+## Configure aws credentials
+
+* On the cli, configure aws settings by typing:
+```bash
+aws configure
+```
+* Paste in your AWS Access Key, Secret, and Region. Output format can be left as "None".
 
