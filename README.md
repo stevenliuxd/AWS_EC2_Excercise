@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## Configure aws credentials
 
-* On the cli, configure aws settings by typing:
+* On the CLI, configure AWS settings by typing:
 ```bash
 aws configure
 ```
