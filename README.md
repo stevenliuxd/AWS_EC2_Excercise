@@ -13,19 +13,22 @@ This cmd-line application has two features that displays ec2 instance informatio
 
 * Using your terminal, cd to the application directory
 
-* Create virtual env:
+* Create Virtual Environment:
 ```bash
 python3 -m venv venv
 ```
 
-* Activate virtual env:
+* Activate Virtual Environment:
 ```bash
-venv/Scripts/activate (May need Admin Powershell: Set-ExecutionPolicy RemoteSigned)
+(Windows) venv/Scripts/activate (May need to execute Admin Powershell: Set-ExecutionPolicy RemoteSigned)
+```
+```bash
+(Linux) source venv/bin/activate
 ```
 
 * Install requirements into virtual env:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Configure AWS credentials
@@ -39,11 +42,11 @@ aws configure
 ## Run the Program
 
 ```bash
-python ec2_main.py
+python3 ec2_main.py
 ```
 
 ## Run Unit Tests
 ```bash
-python -m unittest test_ec2.py
+python3 -m unittest test_ec2.py
 ```
 
