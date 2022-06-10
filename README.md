@@ -36,13 +36,13 @@ aws configure
 ```
 * Paste in your AWS Access Key, Secret, and Region. Output format can be left as "None"
 
-## Run the program
+## Run the Program
 
 ```bash
 python ec2_main.py
 ```
 
-## Run unit tests
+## Run Unit Tests
 ```bash
 python -m unittest test_ec2.py
 ```
