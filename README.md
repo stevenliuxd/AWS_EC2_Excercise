@@ -42,11 +42,11 @@ aws configure
 ## Run the Program
 
 ```bash
-python3 ec2_main.py
+python ec2_main.py
 ```
 
 ## Run Unit Tests
 ```bash
-python3 -m unittest test_ec2.py
+python -m unittest test_ec2.py
 ```
 
