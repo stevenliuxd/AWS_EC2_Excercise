@@ -1,5 +1,4 @@
 import boto3
-import json
 
 
 def instance_report():
@@ -58,6 +57,8 @@ def instance_report():
     
 def ingress_rules(user_group):
 
+    # Strip whitespaces off entry
+
     # Pull security group description
     aws = boto3.client('ec2') 
     describe_output = aws.describe_security_groups()
@@ -99,7 +100,7 @@ def ingress_rules(user_group):
     print("----------------------------------------------------------------------------------")
 
     if warn is True:
-        print("WARNING: Rule(s) in the security group allow for inbound traffic from ANY IP address.")
+        print("WARNING: Rule(s) in the security group allows for inbound traffic from ANY IP address.")
 
     # Return dict for testing
     return rules_total
