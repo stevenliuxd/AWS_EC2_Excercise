@@ -1,6 +1,5 @@
-from multiprocessing.sharedctypes import Value
 import boto3
-import botocore
+
 
 def instance_report():
 

@@ -11,7 +11,7 @@ This cmd-line application has two features that displays ec2 instance informatio
 
 ## Setup Virtual Environment
 
-Using your terminal, cd to the application directory.
+* Using your terminal, cd to the application directory.
 
 * Create virtual env:
 ```bash
