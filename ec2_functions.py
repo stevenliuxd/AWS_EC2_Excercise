@@ -68,7 +68,6 @@ def ingress_rules(user_group):
     for security_group in security_group_list:
         if security_group["GroupId"] == user_group:
             desired_security_group = security_group
-            print(f'\nFound security group {security_group["GroupId"]}!\n')
     
     # Check if security group has been found
     if desired_security_group == {}:
@@ -76,6 +75,35 @@ def ingress_rules(user_group):
         return {}
 
     # Display the ingress rules for that security group showing the CIDR and port
-            
-    jsono = json.dumps(desired_security_group, indent=4)
-    print(f'The output is: {jsono}')
+    ip_permissions_list = desired_security_group["IpPermissions"]
+    rules_total = []
+    warn = False
+    for ip_permission in ip_permissions_list:
+        port = ip_permission["FromPort"]
+        cidr_group = ip_permission["IpRanges"]
+        for cidr_iter in cidr_group:
+            cidr = cidr_iter["CidrIp"]
+            rules_total.append({"Security Group ID": user_group, "port": port, "Cidr": cidr})
+
+            # Display a warning if any of the rules in the security group allow for inbound traffic from any IP address
+            if "127.0.0.0" in cidr:
+                warn = True
+
+    # Print Results
+    print('\nIngress Rules:')
+    str_format = "{:<22} {:<22} {:<22}"
+    print("----------------------------------------------------------------------------------")
+    print(str_format.format('Security Group ID', 'CIDR', 'Port'))
+    for rule in rules_total:
+        print(str_format.format(rule['Security Group ID'], rule['Cidr'], rule['port']))
+    print("----------------------------------------------------------------------------------")
+
+    if warn is True:
+        print("WARNING: Rule(s) in the security group allow for inbound traffic from ANY IP address.")
+
+    # Return dict for testing
+    return rules_total
+
+
+
+    
