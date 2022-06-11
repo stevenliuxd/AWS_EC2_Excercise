@@ -41,7 +41,8 @@ def instance_report():
         
         # Print results in a table to the user
         str_format = "{:<22} {:<14} {:<16} {:<20}"
-        print("\n----------------------------------------------------------------------------------")
+        print('\nEC2 Instances:')
+        print("----------------------------------------------------------------------------------")
         print(str_format.format('Instance ID', 'Name', 'Instance Type', 'Security Group IDs'))
         for instance in instances_filtered:
             print(str_format.format(instance['Instance ID'], instance['Name'], instance['Instance Type'], instance['Security Group IDs']))
@@ -55,9 +56,10 @@ def instance_report():
          exit(1)
 
     
-def ingress_rules(user_group):
+def ingress_rules(user_group_raw):
 
     # Strip whitespaces off entry
+    user_group = user_group_raw.strip()
 
     # Pull security group description
     aws = boto3.client('ec2') 
@@ -89,10 +91,12 @@ def ingress_rules(user_group):
             # Display a warning if any of the rules in the security group allow for inbound traffic from any IP address
             if "127.0.0.0" in cidr:
                 warn = True
+            elif "0.0.0.0" in cidr:
+                warn = True
 
     # Print Results
     print('\nIngress Rules:')
-    str_format = "{:<22} {:<22} {:<22}"
+    str_format = "{:<24} {:<17} {:<10}"
     print("----------------------------------------------------------------------------------")
     print(str_format.format('Security Group ID', 'CIDR', 'Port'))
     for rule in rules_total:

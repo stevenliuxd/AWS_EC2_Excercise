@@ -4,7 +4,7 @@ print("\nWelcome to Steven's AWS excercise!")
 
 while True:
 
-    print("\n1. Display ec2 instances\n2. Display ingress rules\n3. Exit\n")
+    print("\n1. Display EC2 instances\n2. Display ingress rules\n3. Exit\n")
     print('Please select: ')
     selection = input()
 
