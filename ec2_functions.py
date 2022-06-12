@@ -1,6 +1,5 @@
 import boto3
 
-
 def instance_report():
 
     # Pull aws instances
@@ -55,7 +54,6 @@ def instance_report():
          print(f"\nUnknown error: {e}\n")
          exit(1)
 
-    
 def ingress_rules(user_group_raw):
 
     # Strip whitespaces off entry
@@ -75,7 +73,7 @@ def ingress_rules(user_group_raw):
     # Check if security group has been found
     if desired_security_group == {}:
         print(f'\nUnable to find security group {user_group}.')
-        return {}
+        return []
 
     # Display the ingress rules for that security group showing the CIDR and port
     ip_permissions_list = desired_security_group["IpPermissions"]
@@ -96,18 +94,19 @@ def ingress_rules(user_group_raw):
 
     # Print Results
     print('\nIngress Rules:')
-    str_format = "{:<24} {:<17} {:<10}"
+    str_format = "{:<24} {:<20} {:<10}"
     print("----------------------------------------------------------------------------------")
     print(str_format.format('Security Group ID', 'CIDR', 'Port'))
     for rule in rules_total:
         print(str_format.format(rule['Security Group ID'], rule['Cidr'], rule['port']))
     print("----------------------------------------------------------------------------------")
 
+    # Print warning for traffic from any IP
     if warn is True:
         print("WARNING: Rule(s) in the security group allows for inbound traffic from ANY IP address.")
 
-    # Return dict for testing
-    return rules_total
+    # Return for testing
+    return [rules_total, warn]
 
 
 
