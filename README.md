@@ -1,13 +1,13 @@
 # AWS EC2 Excercise
 
-This cmd-line application has two features that displays ec2 instance information to the user.
+This cmd-line application has two features that displays ec2 instance/ingress rules information to the user.
 
 # How to use
 ## Requirements
 
 * [Python 3](https://www.python.org/downloads/) installed on your host machine
-* Clone/download this repo, open the folder with VSCode (or any other IDE). 
-* Alternatively, you can run the application using Windows Powershell or bash (Linux).
+* The application can be launched using Windows Powershell/Command Prompt or Bash (Linux). 
+* If using Windows CMD, use '\' instead of '/' (e.g. venv\Scripts\activate)
 
 ## Setup Virtual Environment
 
@@ -20,7 +20,7 @@ python3 -m venv venv
 
 * Activate Virtual Environment:
 ```bash
-(Windows) venv/Scripts/activate (May need to execute Admin Powershell: Set-ExecutionPolicy RemoteSigned)
+(Windows Powershell) venv/Scripts/activate (If error, use Powershell w/ admin priv: Set-ExecutionPolicy RemoteSigned)
 ```
 ```bash
 (Linux) source venv/bin/activate
