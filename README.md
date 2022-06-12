@@ -7,7 +7,6 @@ This cmd-line application has two features that displays ec2 instance/ingress ru
 
 * [Python 3](https://www.python.org/downloads/) installed on your host machine
 * The application can be launched using Windows Powershell/Command Prompt or Bash (Linux). 
-* If using Windows CMD, use \ instead of / (e.g. venv\Scripts\activate)
 
 ## Setup Virtual Environment
 
@@ -20,7 +19,10 @@ python3 -m venv venv
 
 * Activate Virtual Environment:
 ```bash
-(Windows Powershell) venv/Scripts/activate (If error, use Powershell w/ admin priv: Set-ExecutionPolicy RemoteSigned)
+(Windows Command Prompt) venv\Scripts\activate
+```
+```bash
+(Windows Powershell) venv/Scripts/activate (May need to run: Set-ExecutionPolicy RemoteSigned)
 ```
 ```bash
 (Linux) source venv/bin/activate
