@@ -3,14 +3,15 @@
 This cmd-line application has two features that displays ec2 instance/ingress rules information to the user.
 
 # How to use
+
 ## Requirements
 
 * [Python 3](https://www.python.org/downloads/) installed on your host machine
 * The application can be launched using Windows Powershell/Command Prompt or Bash (Linux). 
+* Clone the repository into your local directory (requires git), or download the zip
+* Using your terminal, cd to the application directory
 
 ## Setup Virtual Environment
-
-* Using your terminal, cd to the application directory
 
 * Create Virtual Environment:
 ```bash
