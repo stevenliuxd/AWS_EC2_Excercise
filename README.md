@@ -2,11 +2,10 @@
 
 This cmd-line application has two features that displays ec2 instance/ingress rules information to the user.
 
-# How to use
+# Instruction
 
 * The application can be launched using Windows Powershell/Command Prompt, or Bash (Linux). 
 * Clone the repository into your local directory (requires git), or download the zip & extract
-* Using your terminal, cd to the application directory
 
 ## Requirements
 
@@ -14,10 +13,11 @@ This cmd-line application has two features that displays ec2 instance/ingress ru
 * pip (required for installing dependencies)
 * git (optional, for cloning this repo)
 
-Note: When cloning, use the HTTPS method. Python3, git and pip can installed with the respective package manager of your Linux distro (apt/yum), or by using the executable installers in windows (pip is included with Python version >3.4 in Windows).
+Note: When cloning, use the HTTPS method. Python3, git and pip can installed with the respective package manager of your Linux distro (apt/yum), or by using the executable installers in windows (pip is included by default with Python version >3.4 in Windows).
 
 ## Setup Virtual Environment
 
+* Using your terminal, cd to the application directory
 * Create Virtual Environment:
 ```bash
 python3 -m venv venv
