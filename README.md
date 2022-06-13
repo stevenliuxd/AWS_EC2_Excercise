@@ -4,13 +4,14 @@ This cmd-line application has two features that displays ec2 instance/ingress ru
 
 # How to use
 
-* The application can be launched using Windows Powershell/Command Prompt or Bash (Linux). 
-* Clone the repository into your local directory (requires git), or download the zip
+* The application can be launched using Windows Powershell/Command Prompt, or Bash (Linux). 
+* Clone the repository into your local directory (requires git), or download the zip & extract
 * Using your terminal, cd to the application directory
 
 ## Requirements
 
 * [Python 3](https://www.python.org/downloads/) installed on your host machine
+* git (optional, for cloning this repo)
 
 ## Setup Virtual Environment
 
