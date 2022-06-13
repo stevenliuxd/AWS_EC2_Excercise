@@ -14,6 +14,8 @@ This cmd-line application has two features that displays ec2 instance/ingress ru
 * pip (required for installing dependencies)
 * git (optional, for cloning this repo)
 
+Note: When cloning, use the HTTPS method. Python3, git and pip can installed with the respective package manager of your Linux distro (apt/yum), or by using the executable installers in windows (pip is included with Python version >3.4 in Windows).
+
 ## Setup Virtual Environment
 
 * Create Virtual Environment:
