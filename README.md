@@ -5,7 +5,7 @@ This cmd-line application has two features that displays ec2 instance/ingress ru
 # Running the Application
 
 * The application can be launched using Windows Powershell/Command Prompt, or Bash (Linux). 
-* Clone the repository into your local directory (requires git), or download the zip & extract
+* Clone this repository into your local directory (requires git), or download the zip & extract
 
 ## Requirements
 
